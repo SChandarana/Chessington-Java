@@ -21,6 +21,14 @@ public class Pawn extends AbstractPiece {
                 ? new Move(from, from.plus(-1,0))
                 : new Move(from, from.plus(1, 0))
         );
+
+        if (!hasMoved) {
+            moves.add(
+                    this.getColour() == PlayerColour.WHITE
+                            ? new Move(from, from.plus(-2,0))
+                            : new Move(from, from.plus(2, 0))
+            );
+        }
         return moves;
     }
 }

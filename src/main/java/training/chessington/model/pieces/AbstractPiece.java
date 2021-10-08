@@ -3,7 +3,7 @@ package training.chessington.model.pieces;
 import training.chessington.model.PlayerColour;
 
 public abstract class AbstractPiece implements Piece {
-
+    protected boolean hasMoved = false;
     protected final Piece.PieceType type;
     protected final PlayerColour colour;
 
@@ -25,5 +25,10 @@ public abstract class AbstractPiece implements Piece {
     @Override
     public String toString() {
         return colour.toString() + " " + type.toString();
+    }
+
+    @Override
+    public void move(){
+        hasMoved = true;
     }
 }
